@@ -85,6 +85,8 @@ func whichLexer(path string) string {
 		return "go"
 	} else if strings.HasSuffix(path, ".sh") {
 		return "console"
+	} else if strings.HasSuffix(path, ".fs") {
+		return "f#"
 	}
 	panic("No lexer for " + path)
 }
