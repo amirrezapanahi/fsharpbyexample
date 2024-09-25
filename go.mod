@@ -1,4 +1,4 @@
-module github.com/mmcgrana/gobyexample
+module github.com/amirrezapanahi/fsharpbyexample
 
 go 1.23.0
 

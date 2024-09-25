@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>F# by Example: Hello World</title>
+    <link rel=stylesheet href="site.css">
+  </head>
+  <script>
+      window.onkeydown = (e) => {
+          if (e.ctrlKey || e.altKey || e.shiftKey) {
+              return;
+          }
+          
+          
+      }
+  </script>
+  <body>
+    <div class="example" id="hello-world">
+      <h2><a href="./">F# by Example</a>: Hello World</h2>
+      
+      <table>
+        
+        <tr>
+          <td class="docs">
+            <p>Our first program will print the classic
+&ldquo;Hello, World!&rdquo; message.</p>
+
+          </td>
+          <td class="code">
+            
+          <pre class="chroma"><code><span class="line"><span class="cl"><span class="nf">printfn</span> <span class="nf">&#34;Hello,</span> <span class="err">World!&#34;</span></span></span></code></pre>
+          </td>
+        </tr>
+        
+      </table>
+      
+      <table>
+        
+        <tr>
+          <td class="docs">
+            <p>To run the program, put the code in <code>hello-world.fs</code> and
+use <code>dotnet run</code>.</p>
+
+          </td>
+          <td class="code leading">
+            
+          <pre class="chroma"><code><span class="line"><span class="cl"><span class="gp">$</span> dotnet run
+</span></span><span class="line"><span class="cl"><span class="go">Hello, World!</span></span></span></code></pre>
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Now that we can run and build basic Go programs, let&rsquo;s
+learn more about the language.</p>
+
+          </td>
+          <td class="code empty">
+            
+          
+          </td>
+        </tr>
+        
+      </table>
+      
+      
+
+    <p class="footer">
+      by <a href="https://compositional-it.com">Compositional IT</a> | <a href="https://github.com/CompositionalIT">source</a> | <a href="https://github.com/CompositionalIT">license</a>
+    </p>
+
+    </div>
+    <script>
+      var codeLines = [];
+      codeLines.push('');codeLines.push('');codeLines.push('');
+    </script>
+    <script src="site.js" async></script>
+  </body>
+</html>

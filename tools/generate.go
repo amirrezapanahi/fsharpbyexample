@@ -11,7 +11,6 @@ import (
 	"regexp"
 	"strings"
 	"text/template"
-	"sort"
 
 	"github.com/alecthomas/chroma/v2"
 	"github.com/alecthomas/chroma/v2/formatters/html"
@@ -88,6 +87,7 @@ func whichLexer(path string) string {
 		return "f#"
 	} else if strings.HasSuffix(path, ".sh") {
 		return "console"
+	}
 
 	panic("No lexer for " + path)
 }
@@ -265,7 +265,6 @@ func parseExamples() []*Example {
 		example.ID = exampleID
 		example.Segs = make([][]*Seg, 0)
 		sourcePaths := mustGlob("examples/" + exampleID + "/*")
-		sort.Sort(sort.Reverse(sort.StringSlice(sourcePaths)))
 		for _, sourcePath := range sourcePaths {
 			if !isDir(sourcePath) {
 				if strings.HasSuffix(sourcePath, ".hash") {
