@@ -12,6 +12,10 @@
           }
           
           
+          if (e.key == "ArrowRight") {
+              window.location.href = 'functions';
+          }
+          
       }
   </script>
   <body>
@@ -22,13 +26,23 @@
         
         <tr>
           <td class="docs">
+            
+          </td>
+          <td class="code leading">
+            <a href="https://try.fsharp.org/#?code=imGbg-vY_s7"><img title="Run code" src="play.png" class="run" /></a><img title="Copy code" src="clipboard.png" class="copy" />
+          <pre class="chroma"><code><span class="line"><span class="cl"><span class="k">open</span> <span class="nn">System</span></span></span></code></pre>
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
             <p>Our first program will print the classic
 &ldquo;Hello, World!&rdquo; message.</p>
 
           </td>
           <td class="code">
             
-          <pre class="chroma"><code><span class="line"><span class="cl"><span class="nf">printfn</span> <span class="nf">&#34;Hello,</span> <span class="err">World!&#34;</span></span></span></code></pre>
+          <pre class="chroma"><code><span class="line"><span class="cl"><span class="n">printfn</span> <span class="s">&#34;Hello, World!&#34;</span></span></span></code></pre>
           </td>
         </tr>
         
@@ -64,6 +78,10 @@ learn more about the language.</p>
       </table>
       
       
+      <p class="next">
+        Next example: <a href="functions">Functions</a>.
+      </p>
+      
 
     <p class="footer">
       by <a href="https://compositional-it.com">Compositional IT</a> | <a href="https://github.com/CompositionalIT">source</a> | <a href="https://github.com/CompositionalIT">license</a>
@@ -72,7 +90,7 @@ learn more about the language.</p>
     </div>
     <script>
       var codeLines = [];
-      codeLines.push('');codeLines.push('');codeLines.push('');
+      codeLines.push('');codeLines.push('');codeLines.push('');codeLines.push('');
     </script>
     <script src="site.js" async></script>
   </body>

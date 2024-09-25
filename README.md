@@ -1,4 +1,4 @@
-# Go by Example
+# F# by Example
 
 Content and build toolchain for [Go by Example](https://gobyexample.com),
 a site that teaches Go via annotated example programs.
@@ -116,3 +116,30 @@ sensitive to the order - that's probably a bug - so feel free to report it.
 
 
 
+## How to add new examples
+
+First create a new entry in `examples.txt`
+
+```
+...
+...
+Example
+```
+
+Then create a new folder for the example: 
+
+```
+$ mkdir example
+```
+
+Create a `fsx` file which contains source code for that file and a `sh` file which resembles the output of that script
+
+```
+$ touch example.fsx example.sh
+```
+
+When you rebuild the app a `hash` file will automatically be created
+
+```
+example.hash
+```

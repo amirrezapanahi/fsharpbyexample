@@ -83,8 +83,8 @@ func mustGlob(glob string) []string {
 func whichLexer(path string) string {
 	if strings.HasSuffix(path, ".go") {
 		return "go"
-	} else if strings.HasSuffix(path, ".fs") {
-		return "f#"
+	} else if strings.HasSuffix(path, ".fsx") {
+		return "fsharp"
 	} else if strings.HasSuffix(path, ".sh") {
 		return "console"
 	}
@@ -118,6 +118,7 @@ type Example struct {
 }
 
 func parseHashFile(sourcePath string) (string, string) {
+	println(sourcePath)
 	lines := readLines(sourcePath)
 	return lines[0], lines[1]
 }
@@ -197,9 +198,24 @@ func parseSegs(sourcePath string) ([]*Seg, string) {
 }
 
 func chromaFormat(code, filePath string) string {
-	lexer := lexers.Get(filePath)
-	if lexer == nil {
-		lexer = lexers.Fallback
+	var lexer chroma.Lexer
+	// Check for F# and F# script files
+	if strings.HasSuffix(filePath, ".fs") || strings.HasSuffix(filePath, ".fsx") {
+		lexer = lexers.Get("fsharp")
+		if lexer == nil {
+			println("No lexer for F#, falling back to default")
+			lexer = lexers.Fallback
+		}
+	} else {
+		lexer = lexers.Get(filePath)
+		if lexer == nil {
+			println("No lexer found for file type, falling back to default")
+			lexer = lexers.Fallback
+		}
+	}
+
+	if strings.HasSuffix(filePath, ".fsx") {
+		code = strings.Trim(code, "\n")
 	}
 
 	if strings.HasSuffix(filePath, ".sh") {
@@ -208,7 +224,7 @@ func chromaFormat(code, filePath string) string {
 
 	lexer = chroma.Coalesce(lexer)
 
-	style := styles.Get("swapoff")
+	style := styles.Get("emacs")
 	if style == nil {
 		style = styles.Fallback
 	}
@@ -237,8 +253,8 @@ func parseAndRenderSegs(sourcePath string) ([]*Seg, string) {
 			}
 		}
 	}
-	// we are only interested in the 'go' code to pass to play.golang.org
-	if lexer != "f#" {
+	// we are only interested in the 'fsharp' code
+	if lexer != "fsharp" {
 		filecontent = ""
 	}
 	return segs, filecontent

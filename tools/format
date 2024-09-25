@@ -2,7 +2,7 @@
 
 set -eo pipefail
 
-paths=$(ls examples/*/*.fs)
+paths=$(ls examples/*/*.fsx)
 
 for path in $paths; do
   dotnet fantomas $path
