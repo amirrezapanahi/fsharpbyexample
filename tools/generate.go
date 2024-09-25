@@ -11,6 +11,7 @@ import (
 	"regexp"
 	"strings"
 	"text/template"
+	"sort"
 
 	"github.com/alecthomas/chroma/v2"
 	"github.com/alecthomas/chroma/v2/formatters/html"
@@ -83,11 +84,11 @@ func mustGlob(glob string) []string {
 func whichLexer(path string) string {
 	if strings.HasSuffix(path, ".go") {
 		return "go"
-	} else if strings.HasSuffix(path, ".sh") {
-		return "console"
 	} else if strings.HasSuffix(path, ".fs") {
 		return "f#"
-	}
+	} else if strings.HasSuffix(path, ".sh") {
+		return "console"
+
 	panic("No lexer for " + path)
 }
 
@@ -190,7 +191,7 @@ func parseSegs(sourcePath string) ([]*Seg, string) {
 	for i, seg := range segs {
 		seg.CodeEmpty = (seg.Code == "")
 		seg.CodeLeading = (i < (len(segs) - 1))
-		seg.CodeRun = strings.Contains(seg.Code, "package main")
+		seg.CodeRun = strings.Contains(seg.Code, "open System")
 	}
 	return segs, strings.Join(source, "\n")
 }
@@ -237,7 +238,7 @@ func parseAndRenderSegs(sourcePath string) ([]*Seg, string) {
 		}
 	}
 	// we are only interested in the 'go' code to pass to play.golang.org
-	if lexer != "go" {
+	if lexer != "f#" {
 		filecontent = ""
 	}
 	return segs, filecontent
@@ -264,6 +265,7 @@ func parseExamples() []*Example {
 		example.ID = exampleID
 		example.Segs = make([][]*Seg, 0)
 		sourcePaths := mustGlob("examples/" + exampleID + "/*")
+		sort.Sort(sort.Reverse(sort.StringSlice(sourcePaths)))
 		for _, sourcePath := range sourcePaths {
 			if !isDir(sourcePath) {
 				if strings.HasSuffix(sourcePath, ".hash") {
