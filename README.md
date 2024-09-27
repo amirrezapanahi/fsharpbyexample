@@ -25,7 +25,7 @@ To build the site you'll need Go installed. Run:
 $ tools/build
 ```
 
-To build continuously in a loop:
+To build continuously in a loop (allows for hot-reloading):
 
 ```console
 $ tools/build-loop
