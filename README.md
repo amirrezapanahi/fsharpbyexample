@@ -70,11 +70,7 @@ example.hash
 
 To upload the site:
 
-```console
-$ export AWS_ACCESS_KEY_ID=...
-$ export AWS_SECRET_ACCESS_KEY=...
-$ tools/upload
-```
+TODO
 
 ### FAQ
 
