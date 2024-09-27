@@ -92,3 +92,7 @@ TODO
 
 TODO
 
+#### Why is there `open System` for each example
+
+This is just for the first line of the code snippet to render the "copy" and "run in playground" buttons
+
