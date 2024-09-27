@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>F# by Example: Discriminated Unions</title>
+    <link rel=stylesheet href="site.css">
+  </head>
+  <script>
+      window.onkeydown = (e) => {
+          if (e.ctrlKey || e.altKey || e.shiftKey) {
+              return;
+          }
+          
+          if (e.key == "ArrowLeft") {
+              window.location.href = 'functions';
+          }
+          
+          
+      }
+  </script>
+  <body>
+    <div class="example" id="discriminated-unions">
+      <h2><a href="./">F# by Example</a>: Discriminated Unions</h2>
+      
+      <table>
+        
+        <tr>
+          <td class="docs">
+            <p>A discriminated union is a type that can be one of several named cases
+Each case can optionally have associated data</p>
+
+          </td>
+          <td class="code empty leading">
+            
+          
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            
+          </td>
+          <td class="code leading">
+            
+          <pre class="chroma"><code><span class="line"><span class="cl"><span class="k">type</span> <span class="nc">Animal</span> <span class="o">=</span></span></span></code></pre>
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>The Dog has a single string value (name)</p>
+
+          </td>
+          <td class="code leading">
+            
+          <pre class="chroma"><code><span class="line"><span class="cl">    <span class="o">|</span> <span class="n">Dog</span> <span class="k">of</span> <span class="n">name</span><span class="o">:</span> <span class="kt">string</span></span></span></code></pre>
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>The Cat has two values: a string (name) and an int (lives)</p>
+
+          </td>
+          <td class="code leading">
+            
+          <pre class="chroma"><code><span class="line"><span class="cl">    <span class="o">|</span> <span class="n">Cat</span> <span class="k">of</span> <span class="n">name</span><span class="o">:</span> <span class="kt">string</span> <span class="o">*</span> <span class="n">lives</span><span class="o">:</span> <span class="n">int</span></span></span></code></pre>
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Pattern matching allows us to <em>enforce</em> handling all possible cases of the union</p>
+
+          </td>
+          <td class="code leading">
+            
+          <pre class="chroma"><code><span class="line"><span class="cl"><span class="k">let</span> <span class="nv">describe</span> <span class="n">animal</span> <span class="o">=</span>
+</span></span><span class="line"><span class="cl">    <span class="k">match</span> <span class="n">animal</span> <span class="k">with</span></span></span></code></pre>
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>For each case, we can destructure and use the associated data</p>
+
+          </td>
+          <td class="code leading">
+            
+          <pre class="chroma"><code><span class="line"><span class="cl">    <span class="o">|</span> <span class="n">Dog</span> <span class="n">name</span> <span class="o">-&gt;</span> <span class="n">sprintf</span> <span class="s">&#34;%s says Woof!&#34;</span> <span class="n">name</span>
+</span></span><span class="line"><span class="cl">    <span class="o">|</span> <span class="n">Cat</span><span class="o">(</span><span class="n">name</span><span class="o">,</span> <span class="o">_)</span> <span class="o">-&gt;</span> <span class="n">sprintf</span> <span class="s">&#34;%s says Meow!&#34;</span> <span class="n">name</span></span></span></code></pre>
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            
+          </td>
+          <td class="code leading">
+            
+          <pre class="chroma"><code><span class="line"><span class="cl"><span class="k">let</span> <span class="nv">dog</span> <span class="o">=</span> <span class="n">Dog</span> <span class="s">&#34;Buddy&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">let</span> <span class="nv">cat</span> <span class="o">=</span> <span class="n">Cat</span><span class="o">(</span><span class="s">&#34;Whiskers&#34;</span><span class="o">,</span> <span class="n">9</span><span class="o">)</span></span></span></code></pre>
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Process and print information about each animal
+This demonstrates how we can work with a collection of mixed animal types</p>
+
+          </td>
+          <td class="code">
+            
+          <pre class="chroma"><code><span class="line"><span class="cl"><span class="k">for</span> <span class="n">animal</span> <span class="k">in</span> <span class="o">[</span> <span class="n">dog</span><span class="o">;</span> <span class="n">cat</span> <span class="o">]</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="n">printfn</span> <span class="s">&#34;%s&#34;</span> <span class="o">(</span><span class="n">describe</span> <span class="n">animal</span><span class="o">)</span></span></span></code></pre>
+          </td>
+        </tr>
+        
+      </table>
+      
+      <table>
+        
+      </table>
+      
+      
+
+    <p class="footer">
+      by <a href="https://compositional-it.com">Compositional IT</a> | <a href="https://github.com/CompositionalIT">source</a> | <a href="https://github.com/CompositionalIT">license</a>
+    </p>
+
+    </div>
+    <script>
+      var codeLines = [];
+      codeLines.push('');codeLines.push('');codeLines.push('');codeLines.push('');codeLines.push('');codeLines.push('');codeLines.push('');codeLines.push('');
+    </script>
+    <script src="site.js" async></script>
+  </body>
+</html>

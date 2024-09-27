@@ -16,6 +16,10 @@
           }
           
           
+          if (e.key == "ArrowRight") {
+              window.location.href = 'discriminated-unions';
+          }
+          
       }
   </script>
   <body>
@@ -86,6 +90,10 @@ The last expression in a function will be the returned value</p>
         
       </table>
       
+      
+      <p class="next">
+        Next example: <a href="discriminated-unions">Discriminated Unions</a>.
+      </p>
       
 
     <p class="footer">
