@@ -1,3 +1,6 @@
 Hello World
+Values
+Strings
+String Interpolation
 Functions
 Discriminated Unions

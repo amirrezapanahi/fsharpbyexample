@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>F# by Example: String Interpolation</title>
+    <link rel=stylesheet href="site.css">
+  </head>
+  <script>
+      window.onkeydown = (e) => {
+          if (e.ctrlKey || e.altKey || e.shiftKey) {
+              return;
+          }
+          
+          if (e.key == "ArrowLeft") {
+              window.location.href = 'strings';
+          }
+          
+          
+          if (e.key == "ArrowRight") {
+              window.location.href = 'functions';
+          }
+          
+      }
+  </script>
+  <body>
+    <div class="example" id="string-interpolation">
+      <h2><a href="./">F# by Example</a>: String Interpolation</h2>
+      
+      <table>
+        
+        <tr>
+          <td class="docs">
+            
+          </td>
+          <td class="code leading">
+            <a href="https://try.fsharp.org/#?code=UmQF_oO4Nk-"><img title="Run code" src="play.png" class="run" /></a><img title="Copy code" src="clipboard.png" class="copy" />
+          <pre class="chroma"><code><span class="line"><span class="cl"><span class="k">open</span> <span class="nn">System</span></span></span></code></pre>
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            
+          </td>
+          <td class="code leading">
+            
+          <pre class="chroma"><code><span class="line"><span class="cl"><span class="k">let</span> <span class="nv">name</span> <span class="o">=</span> <span class="s">&#34;John&#34;</span></span></span></code></pre>
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>String interpolation is prefixed with <code>$</code>
+values that you want to inject in the string are templated with curly braces <code>{}</code></p>
+
+          </td>
+          <td class="code leading">
+            
+          <pre class="chroma"><code><span class="line"><span class="cl"><span class="k">let</span> <span class="nv">a</span> <span class="o">=</span> <span class="o">$</span><span class="s">&#34;Hello, {name}&#34;</span></span></span></code></pre>
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Anything inside the <code>{}</code> can be treated as a valid expression
+This means you can do more expressive stuff inside</p>
+
+          </td>
+          <td class="code leading">
+            
+          <pre class="chroma"><code><span class="line"><span class="cl"><span class="k">let</span> <span class="nv">b</span> <span class="o">=</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span><span class="s">&#34;&#34;&#34;Hello, 
+</span></span></span><span class="line"><span class="cl"><span class="s">    {if name &lt;&gt; &#34;John&#34; then name else &#34;[redacted]&#34;}&#34;&#34;&#34;</span></span></span></code></pre>
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            
+          </td>
+          <td class="code leading">
+            
+          <pre class="chroma"><code><span class="line"><span class="cl"><span class="n">printfn</span> <span class="s">&#34;%s&#34;</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl"><span class="n">printfn</span> <span class="s">&#34;%s&#34;</span> <span class="n">b</span></span></span></code></pre>
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Note: If you want to reference string literals within string interpolation
+expression you should wrap the whole string with triple quotation marks</p>
+
+          </td>
+          <td class="code empty">
+            
+          
+          </td>
+        </tr>
+        
+      </table>
+      
+      <table>
+        
+        <tr>
+          <td class="docs">
+            
+          </td>
+          <td class="code">
+            
+          <pre class="chroma"><code><span class="line"><span class="cl"><span class="gp">$</span> dotnet fsi string-interpolation.fsx
+</span></span><span class="line"><span class="cl"><span class="go">Hello, John
+</span></span></span><span class="line"><span class="cl"><span class="go">Hello, [redacted]</span></span></span></code></pre>
+          </td>
+        </tr>
+        
+      </table>
+      
+      
+      <p class="next">
+        Next example: <a href="functions">Functions</a>.
+      </p>
+      
+
+    <p class="footer">
+      by <a href="https://compositional-it.com">Compositional IT</a> | <a href="https://github.com/CompositionalIT">source</a> | <a href="https://github.com/CompositionalIT">license</a>
+    </p>
+
+    </div>
+    <script>
+      var codeLines = [];
+      codeLines.push('');codeLines.push('');codeLines.push('');codeLines.push('');codeLines.push('');codeLines.push('');codeLines.push('');
+    </script>
+    <script src="site.js" async></script>
+  </body>
+</html>

@@ -13,7 +13,7 @@
           
           
           if (e.key == "ArrowRight") {
-              window.location.href = 'functions';
+              window.location.href = 'values';
           }
           
       }
@@ -58,14 +58,14 @@ use <code>dotnet run</code>.</p>
           </td>
           <td class="code leading">
             
-          <pre class="chroma"><code><span class="line"><span class="cl"><span class="gp">$</span> dotnet run
+          <pre class="chroma"><code><span class="line"><span class="cl"><span class="gp">$</span> dotnet fsi hello-world.fsx
 </span></span><span class="line"><span class="cl"><span class="go">Hello, World!</span></span></span></code></pre>
           </td>
         </tr>
         
         <tr>
           <td class="docs">
-            <p>Now that we can run and build basic Go programs, let&rsquo;s
+            <p>Now that we can run and build basic F# programs, let&rsquo;s
 learn more about the language.</p>
 
           </td>
@@ -79,7 +79,7 @@ learn more about the language.</p>
       
       
       <p class="next">
-        Next example: <a href="functions">Functions</a>.
+        Next example: <a href="values">Values</a>.
       </p>
       
 
