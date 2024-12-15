@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+dotnet tool install -g fantomas-tool
+
+tools/build
