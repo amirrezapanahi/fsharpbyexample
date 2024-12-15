@@ -66,11 +66,10 @@ When you rebuild the app a `hash` file will automatically be created
 ```
 example.hash
 ```
-### Publishing
+### License
+This work is a derivative of "Go by Example" by Mark McGranaghan, used under CC BY 3.0.
 
-To upload the site:
-
-TODO
+This work is licensed under CC BY 3.0 by Amir Panahi.
 
 ### FAQ
 
