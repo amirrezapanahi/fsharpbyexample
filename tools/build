@@ -33,6 +33,9 @@ tools/generate $GENERATE_DIR
 # given that they dont have the `.html` file extension
 # Also need to handle files with hyphens as the * doesnt handle it for some reason
 cat << EOF > $SITE_DIR/_headers
+/*.css
+  Content-Type: text/css
+
 /*
   Content-Type: text/html
 
