@@ -37,10 +37,7 @@ https://:fsharp-by-example.pages.dev/*
   X-Robots-Tag: noindex
 
 https://fsharp-by-example.com/*
-	Content-Type: text/html
-
-https://fsharp-by-example.com/string-interpolation
-	Content-Type: text/html
+  Content-Type: text/html
 EOF
 
 # In TESTING mode, make sure that the generated content is identical to
