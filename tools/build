@@ -29,6 +29,13 @@ trap cleanup EXIT
 verbose && echo "Generating HTML to $GENERATE_DIR..."
 tools/generate $GENERATE_DIR
 
+# Cloudflare pages requires this headers for the html pages in order to render it
+# given that they dont have the `.html` file extension
+cat << EOF > _headers
+https://fsharp-by-example.com/*
+  Content-Type: text/html
+EOF
+
 # In TESTING mode, make sure that the generated content is identical to
 # what's already in SITE_DIR. If a difference is found, this script exits
 # with an error.
