@@ -31,7 +31,7 @@ tools/generate $GENERATE_DIR
 
 # Cloudflare pages requires this headers for the html pages in order to render it
 # given that they dont have the `.html` file extension
-cat << EOF > _headers
+cat << EOF > $SITE_DIR/_headers
 https://fsharp-by-example.com/*
   Content-Type: text/html
 EOF
