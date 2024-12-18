@@ -128,7 +128,9 @@ func resetURLHashFile(codehash, code, sourcePath string) string {
 		fmt.Println("  Sending request to play.golang.org")
 	}
 	payload := strings.NewReader(code)
-	resp, err := http.Post("https://play.golang.org/share", "text/plain", payload)
+	//Currently no good fsharp playground that exposes a "share" endpoint
+	//This wont work but just here for a placeholder
+	resp, err := http.Post("https://try.fsharp.org/share", "text/plain", payload)
 	check(err)
 	defer resp.Body.Close()
 	body, err := io.ReadAll(resp.Body)

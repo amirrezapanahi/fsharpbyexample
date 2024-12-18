@@ -40,6 +40,9 @@ https://:fsharp-by-example.pages.dev/*
   X-Robots-Tag: noindex
 EOF
 
+# Copy the fsharp logo to /public folder
+scp fsharp.png $GENERATE_DIR
+
 # In TESTING mode, make sure that the generated content is identical to
 # what's already in SITE_DIR. If a difference is found, this script exits
 # with an error.
