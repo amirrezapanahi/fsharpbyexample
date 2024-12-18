@@ -36,10 +36,10 @@ cat << EOF > $SITE_DIR/_headers
 https://fsharp-by-example.com/*
   Content-Type: text/html
 
-/*-*
+https://fsharp-by-example.com/*-*
   Content-Type: text/html
 
-/*-*-*
+https://fsharp-by-example.com/*-*-*
   Content-Type: text/html
 
 EOF
